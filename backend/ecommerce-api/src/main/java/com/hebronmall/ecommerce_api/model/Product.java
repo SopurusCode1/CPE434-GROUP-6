@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.hebronmall.ecommerce_api.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class Product {
+public class Product extends BaseEntity{
 
     @NotBlank(message = "Product name is required")
     @Column(nullable = false, length = 150)

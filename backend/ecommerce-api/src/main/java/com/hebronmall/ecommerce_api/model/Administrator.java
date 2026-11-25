@@ -1,5 +1,9 @@
 package com.hebronmall.ecommerce_api.model;
 
+import jakarta.persistence.*;             
+import lombok.*;                          
+import lombok.experimental.SuperBuilder; 
+
 @Entity
 @Table(name = "administrators")
 @PrimaryKeyJoinColumn(name = "user_id")
@@ -9,6 +13,6 @@ package com.hebronmall.ecommerce_api.model;
 // @AllArgsConstructor
 @SuperBuilder
 
-public class Administrators extends User{
+public class Administrator extends User{
 
 }
