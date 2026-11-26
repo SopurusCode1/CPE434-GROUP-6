@@ -1,5 +1,4 @@
 package com.hebronmall.ecommerce_api.model;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -16,5 +15,7 @@ import lombok.*;
 public class Student extends User {
 
     @Column(nullable = false, unique = true)
+    @NotBlank(message = "Matric number is required")
     private String matricNumber;
+    
 }
