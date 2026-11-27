@@ -35,6 +35,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/users/students", "/api/v1/users/admins").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/stores/**", "/api/v1/products/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/v3/api-docs").permitAll()
 
                         // All other endpoints just require any logged-in user
                         .anyRequest().authenticated()
