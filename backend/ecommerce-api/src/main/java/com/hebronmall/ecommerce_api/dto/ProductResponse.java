@@ -12,5 +12,6 @@ public record ProductResponse(
         String imageUrl,
         Long storeId,
         String storeName, // Pulled safely from product.getStore().getName()
-        LocalDateTime createdAt
+        LocalDateTime createdAt,
+        LocalDateTime updatedAt
 ) {}
