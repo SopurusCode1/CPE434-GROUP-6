@@ -12,6 +12,8 @@ import com.hebronmall.ecommerce_api.repository.AdministratorRepository;
 import com.hebronmall.ecommerce_api.repository.StudentRepository;
 import com.hebronmall.ecommerce_api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +26,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final StudentRepository studentRepository;
     private final AdministratorRepository administratorRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public UserResponse registerStudent(StudentRegisterRequest request) {
@@ -37,7 +40,8 @@ public class UserService {
         Student student = Student.builder()
                 .fullName(request.fullName())
                 .email(request.email())
-                .password(request.password()) // Replace with passwordEncoder.encode(request.password()) when adding Spring Security
+                .password(passwordEncoder.encode(request.password()))
+                //.password(request.password()) // Replace with passwordEncoder.encode(request.password()) when adding Spring Security
                 .matricNumber(request.matricNumber())
                 .build();
 
